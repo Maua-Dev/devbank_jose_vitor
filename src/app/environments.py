@@ -15,12 +15,7 @@ class STAGE(Enum):
 
 
 class Environments:
-    """
-    Defines the environment variables for the application. You should not instantiate this class directly. Please use Environments.get_envs() method instead.
-
-    Usage:
-
-    """
+    
     stage: STAGE
 
     def _configure_local(self):
@@ -46,11 +41,7 @@ class Environments:
 
     @staticmethod
     def get_envs() -> "Environments":
-        """
-        Returns the Environments object. This method should be used to get the Environments object instead of instantiating it directly.
-        :return: Environments (stage={self.stage})
-
-        """
+        
         envs = Environments()
         envs.load_envs()
         return envs
